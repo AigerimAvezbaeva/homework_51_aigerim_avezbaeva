@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Article Create</title>
+</head>
+<body>
+    <div class="container">
+        <div class="stat_cards">
+        <div class="card">
+            {% if status == 'happy' %}
+            <img src="{% static 'media/happy_cat.jpeg' %}" alt="cat" class="image_card">
+            {% elif status == 'awake' %}
+            <img src="{% static 'media/sad_cat.jpeg' %}" alt="cat" class="image_card">
+            {% elif status == 'sleep' %}
+            <img src="{% static 'media/sleepy_cat.jpeg' %}" alt="cat" class="image_card">
+            {% elif status == 'angry' %}
+            <img src="{% static 'media/angry_cat.webp' %}" alt="cat" class="image_card">
+            {%endif%}
+        </div>
+        <div class="card">
+            <h4>Кот - {{name}}</h4>
+            <h4>Возраст - {{age}}</h4>
+            <h4>Уровень счастья - {{mood}}</h4>
+            <h4>Уровень сытости - {{fullness}}</h4>
+        </div>
+
+        <div class="container_form">
+        <form action="/cat_stats" method="post">
+          {% csrf_token %}
+          <select name="action"  placeholder="Выберите действие" required>
+            <option value="play">Поиграть</option>
+            <option value="feed">Накормить</option>
+            <option value="sleep">Уложить спать</option>
+          </select>
+          <button type="submit">Подтвердить</button>
+        </form>
+      </div>
+    </div>
+    </div>
+</body>
+</html>

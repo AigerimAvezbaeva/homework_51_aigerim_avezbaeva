@@ -1,0 +1,39 @@
+body{
+    font-family: Arial san-serif;
+    color: black;
+}
+
+.first_card{
+    padding: 50px;
+    width: 500px;
+    text-align: center;
+    background: darkgrey;
+}
+form{
+    padding:20px;
+}
+.input_1{
+    width: 250px;
+    align-content: center;
+}
+.input_2{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stat_cards{
+    max-width:980px;
+    background: darkgrey;
+}
+
+.card{
+    padding: 20px;
+    width:350px;
+
+    display: inline-block;
+}
+
+.image_card{
+    max-width: 100%;
+    max-height: 100%;
+}
